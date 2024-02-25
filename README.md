@@ -18,7 +18,7 @@ Keep in mind you need to install numpy, scipy and matplotlib for this to work!
 
 Remember to save the generated pink noise to a WAV file (like I did with ‘pink_noise.wav’) for practical use. I also converted it to an mp3 as I mentioned earlier but this was because it’s much easier to run FFT analysis on .wav files than it is for .mp3 files. Remember, .wav is raw audio and .mp3 files are compressed.
 
-# Analyzing Pink Noise: FFT Magnitude and Phase
+# Analyzing Pink Noise: FFT Magnitude
 
 Above, we generated pink noise and saved it to a WAV file. Now, let’s explore how to analyze this audio signal using Python to verify if it’s actually Pink noise.
 
