@@ -2,7 +2,10 @@ import numpy as np
 from scipy.io import wavfile
 import matplotlib.pyplot as plt
 
-""" This script reads in a wav file, runs an FFT against it, and then stores the magnitude and phase plots as a couple of .png images """
+""" 
+This script reads in a wav file, runs an FFT against it, 
+and then stores the magnitude plot as a couple of .png images 
+"""
 
 def analyze_wav_file(file_name):
     sample_rate, data = wavfile.read(file_name)
@@ -14,9 +17,8 @@ def analyze_wav_file(file_name):
     real_part = np.real(fft_result)
     imag_part = np.imag(fft_result)
 
-    # Calculate magnitude and phase
+    # Calculate magnitude
     magnitude = np.sqrt(real_part**2 + imag_part**2)
-    phase = np.arctan2(imag_part, real_part)
 
     # Convert magnitude to dB (To plot a log)
     magnitude_db = 20 * np.log10(magnitude)
@@ -28,7 +30,6 @@ def analyze_wav_file(file_name):
     positive_freq_mask = freq >= 0
     freq = freq[positive_freq_mask]
     magnitude_db = magnitude_db[positive_freq_mask]
-    phase = phase[positive_freq_mask]
 
     # Plot the magnitude in dB
     plt.figure(figsize=(12, 6))
@@ -39,16 +40,6 @@ def analyze_wav_file(file_name):
     plt.savefig(f'magnitude_{file_name}.png')  # Save the figure as 'magnitude.png'
     plt.close()  # Close the figure to free up memory
 
-    # Plot the phase
-    plt.figure(figsize=(12, 6))
-    plt.plot(freq, phase)
-    plt.title(f'FFT Phase for {file_name}')
-    plt.xlabel('Frequency [Hz]')
-    plt.ylabel('Phase [rad]')
-    plt.savefig(f'phase_{file_name}.png')  # Save the figure as 'phase.png'
-    plt.close()  # Close the figure to free up memory
-
-
 # Read the .wav file
-file_name = 'filename.wav'
+file_name = 'pink_noise.wav'
 analyze_wav_file(file_name)
