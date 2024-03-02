@@ -8,7 +8,7 @@ and then stores the magnitude plot as a couple of .png images
 
 How It Works
 
-1. Reading the WAV File: We start by reading the pink noise WAV file using wavfile.read(file_name). This gives us the sample rate and the audio data.
+1. Reading the WAV File: We start by reading the WAV file using wavfile.read(file_name). This gives us the sample rate and the audio data.
 2. FFT (Fast Fourier Transform): We compute the FFT of the audio data using np.fft.fft(data). This transforms the time-domain signal into the frequency domain.
 3. Magnitude: We extract the real and imaginary parts from the FFT result. The magnitude is calculated as the square root of the sum of squares of the real and imaginary parts.
 4. Magnitude in dB: To visualize the magnitude, we convert it to decibels (dB) using 20 * np.log10(magnitude). This allows us to plot it on a logarithmic scale.
@@ -52,5 +52,5 @@ def analyze_wav_file(file_name):
     plt.close()  # Close the figure to free up memory
 
 # Read the .wav file
-file_name = 'pink_noise.wav'
+file_name = 'file.wav'
 analyze_wav_file(file_name)
