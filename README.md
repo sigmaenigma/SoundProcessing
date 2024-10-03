@@ -39,11 +39,4 @@ This repository contains various sound processing tools, each located in its own
 
 ![magnitude_pink_noise wav-1024x512](https://github.com/user-attachments/assets/f1c554ed-b7d1-4ea8-abcf-7c8a125a5b57)
 
-
-## Getting Started
-
-Each folder contains its own `README.md` file with detailed instructions on how to set up and use the respective tools. Please refer to those files for more information.
-
-## License
-
 This repository is licensed under the MIT License - see the LICENSE file for details.
